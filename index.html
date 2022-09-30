@@ -17,15 +17,18 @@
 		
 		<!-- Creamos un formulario para realizar el login en el sitio web. -->
 		<form action="comprobar.php" method="POST">
-			<label>Email:
-				<input type="text" name="email" required />
-			</label>
-			<label>Contraseña:
-				<input type="contraseña" name="contraseña" required />
-			</label>
-			<input type="submit" name="registrado" value="Login" class="registrado"/>
-		</form>
-		<p>¿Todavía no eres usuario? <a href="registro.html">Regístrate</a>.</p>
+				<label>
+					E-mail
+				</label>
+				<input type="email" name="registrado[email]" required autocomplete="off" placeholder="Tu email..."/>
+				<label>
+					Contraseña
+				</label>
+				<input type="contraseña" name="registrado[contraseña]" required autocomplete="off" placeholder="Tu contraseña..."/>
+			
+				<button type="submit" class="boton-blanco">enviar</button>
+			</form>
+		<p>¿Todavía no eres usuario? <a href="registro.php"> Regístrate</a></p>
 		
 	</body>
 	

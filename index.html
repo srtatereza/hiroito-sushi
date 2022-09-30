@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+	<head>
+		<title>Bienvenido a mi sitio</title>
+		
+		<meta charset="utf-8">
+		
+		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="style.css" type="text/css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		
+	</head>
+	
+	<body>
+		<h1>Bienvenido</h1>
+		
+		<!-- Creamos un formulario para realizar el login en el sitio web. -->
+		<form action="comprobar.php" method="POST">
+			<label>Email:
+				<input type="text" name="email" required />
+			</label>
+			<label>Contraseña:
+				<input type="contraseña" name="contraseña" required />
+			</label>
+			<input type="submit" name="registrado" value="Login" class="registrado"/>
+		</form>
+		<p>¿Todavía no eres usuario? <a href="registro.html">Regístrate</a>.</p>
+		
+	</body>
+	
+</html>

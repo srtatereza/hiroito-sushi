@@ -10,35 +10,35 @@ h1 {
 }
 
 form {
-        display: flex;
-        background-color: rgb(255, 255, 255);
-        border-radius: 1rem;
-        border: 1px solid rgb(0, 0, 0);
-        width: 60%;
-        text-align: center;
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-content: space-around;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1rem;
+    border: 1px solid rgb(0, 0, 0);
+    width: 60%;
+    text-align: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-between;
+    align-items: flex-start;
+}
 
 label {
-        font-weight: bold;
-        text-transform: uppercase;
-        display: block;
-        text-align: center;
-        margin-bottom: 5px;
-        margin-top: 10px;
-    } 
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
 
 input {
-        padding: 0.5rem;
-        display: block;
-        width: 90%;
-        background-color: white;
-        border: 1px solid gray;
-    }
+    padding: 0.5rem;
+    display: block;
+    width: 90%;
+    background-color: white;
+    border: 1px solid gray;
+}
 
 input.registrado {
     background-color: chocolate;
@@ -48,21 +48,21 @@ input.registrado {
     width: 20%;
 }
 
-button{
-
+button {
     background-color: chocolate;
     margin-top: 10px;
     margin-bottom: 10px;
     text-align: center;
-    }
+}
 
-@media screen and (max-width:500px){
-    .myform{
-        width:80%;
+@media screen and (max-width: 500px) {
+    .myform {
+        width: 80%;
     }
 }
-@media screen and (max-width:800px){
-    .myform{
-        width:60%;
+
+@media screen and (max-width: 800px) {
+    .myform {
+        width: 60%;
     }
 }

@@ -140,7 +140,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     <!-- Un enlace a la página de login. -->
-<p>Volver a la página de <a href="index.html">login</a>.</p>
+<p>Volver a la página de <a href="../index.html">login</a>.</p>
 </body>
 
 </html>

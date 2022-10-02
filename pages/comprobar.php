@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         /* El usuario no existe en la base de datos. */
         ?>
         <p>Error: el usuario no existe en la base de datos.</p>
-        <p>Volver al <a href="index.html">login</a>.</p>
+        <p>Volver al <a href="../index.html">login</a>.</p>
         <?php
         die();
     }
@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         ?>
         <p>La contraseña no es correcta. Inténtalo de nuevo.</p>
-        <p>Volver al <a href="index.html">login</a>.</p>
+        <p>Volver al <a href="../index.html">login</a>.</p>
         <?php
     }
 }

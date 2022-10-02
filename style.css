@@ -3,6 +3,24 @@ body {
     background-color: #FFAA62;
 }
 
+div.container {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+div.login {
+
+}
+
+div.register {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
 h1 {
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
@@ -14,7 +32,6 @@ form {
     background-color: rgb(255, 255, 255);
     border-radius: 1rem;
     border: 1px solid rgb(0, 0, 0);
-    width: 60%;
     text-align: center;
     flex-direction: column;
     flex-wrap: wrap;

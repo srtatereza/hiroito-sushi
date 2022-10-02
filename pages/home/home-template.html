@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Menu</title>
+    <link href="home-styles.css" rel="stylesheet">
+    <link href="../../lib/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link href="../../lib/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+<div id="mySidebar" class="sidebar">
+    <a class="sidebar-item" href="#" onclick="toggleNav(this)">
+        <em class="bi bi-list"></em>
+    </a>
+    <a class="sidebar-item" href="#">
+        <em class="bi bi-house-fill"></em>
+        <span class="sidebar-item-text">Home</span>
+    </a>
+    <a class="sidebar-item" href="#">
+        <em class="bi bi-house-fill"></em>
+        <span class="sidebar-item-text">Home</span>
+    </a>
+    <a class="sidebar-item" href="#">
+        <em class="bi bi-house-fill"></em>
+        <span class="sidebar-item-text">Home</span>
+    </a>
+    <a class="sidebar-item" href="#">
+        <em class="bi bi-house-fill"></em>
+        <span class="sidebar-item-text">Home</span>
+    </a>
+</div>
+
+<div id="main">
+    <h2>Collapsed Sidebar</h2>
+    <p>Content...</p>
+</div>
+<script>
+    /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+    function toggleNav(elem) {
+        const {toggled = false} = elem;
+        if (toggled) {
+            elem.toggled = false;
+            document.getElementById("mySidebar").style.width = "95px";
+            document.getElementById("main").style.marginLeft = "95px";
+        } else {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            elem.toggled = true;
+
+
+        }
+    }
+</script>
+</body>
+

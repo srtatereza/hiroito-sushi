@@ -71,6 +71,35 @@ span.sidebar-item-text {
     margin-left: 95px;
 }
 
+img {
+	border: none;
+	border-radius:5%;
+	height: 288px;
+	width: 288px;
+}
+p {
+	line-height: 30px;
+	margin: 0;
+	color: black;
+}
+span {
+    color:black;
+}
+
+.productos {
+    display: block;
+}
+
+div.producto {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap:1rem;
+    grid-auto-flow: row;
+}
+
+
+
+
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
     .sidebar {padding-top: 15px;}

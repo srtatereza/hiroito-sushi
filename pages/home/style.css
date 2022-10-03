@@ -11,6 +11,10 @@ div.container {
     justify-content: center;
 }
 
+div.login {
+
+}
+
 div.register {
     display: flex;
     justify-content: center;

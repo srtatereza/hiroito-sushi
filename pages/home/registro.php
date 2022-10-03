@@ -96,8 +96,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Registro de usuarios</title>
 
     <meta charset="utf-8">
-
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="lib/bootstrap.min.css">
     <link rel="stylesheet" href="style.css" type="text/css">
 
 </head>
@@ -140,7 +140,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     <!-- Un enlace a la página de login. -->
-<p>Volver a la página de <a href="../index.html">login</a>.</p>
+<p>Volver a la página de <a href="comprobar.php">login</a>.</p>
 </body>
 
 </html>

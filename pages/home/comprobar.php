@@ -5,15 +5,47 @@
     <title>Nombre de mi página</title>
 
     <meta charset="utf-8">
-
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
-
-    <style type="text/css">
-    </style>
+    <link rel="stylesheet" href="lib/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css" type="text/css">
 
 </head>
 
 <body>
+    
+<h1>Bienvenido</h1>
+
+<div class="container">
+    <!-- Creamos un formulario para realizar el login en el sitio web. -->
+    <div class="login">
+        <form action="comprobar.php" method="POST">
+            <label>
+                E-mail
+            </label>
+            <input type="email" name="registrado[email]" required autocomplete="off" placeholder="Tu email..."/>
+            <label>
+                Contraseña
+            </label>
+            <input type="contraseña" name="registrado[contraseña]" required autocomplete="off" placeholder="Tu contraseña..."/>
+
+            <button type="submit" class="boton-blanco">enviar</button>
+        </form>
+    </div>
+
+    <?php if (isset($_GET['mensaje'])) { ?>
+<p>Acceso permitido. <a href="home.php">entrar</a>.</p>
+<p>
+    <?php } ?>
+
+
+
+    <div class="register">
+        <span>
+            <span>¿Todavía no eres usuario?</span>
+            <a href="registro.php">Regístrate</a>
+        </span>
+    </div>
+</div>
 
 <?php
 
@@ -41,7 +73,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     /* 2. Consultamos a la base de datos. Vamos a intentar recuperar la contraseña del usuario. Si la consulta devolviese un conjunto vacío, significaría que ni siquiera el usuario existe y tendríamos que actuar en consecuencia. */
     $sql = "SELECT contraseña FROM clientes WHERE email='$email';";
 
-    var_dump($sql);
 
     /* Ejecuto la consulta. */
     try {
@@ -60,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         /* El usuario no existe en la base de datos. */
         ?>
         <p>Error: el usuario no existe en la base de datos.</p>
-        <p>Volver al <a href="../index.html">login</a>.</p>
+        <p>Volver al <a href="comprobar.php">login</a>.</p>
         <?php
         die();
     }
@@ -74,13 +105,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     /* Sólo nos quedaría comprobar que ambas contraseña son iguales. Para ello, necesitamos la función contraseña_verify. */
     if (password_verify($contraseña, $passBD)) {
+        header('Location: comprobar.php?mensaje=1');
         ?>
-        <p>La contraseña es correcta. Acceso permitido.</p>
         <?php
     } else {
         ?>
         <p>La contraseña no es correcta. Inténtalo de nuevo.</p>
-        <p>Volver al <a href="../index.html">login</a>.</p>
+        <p>Volver al <a href="comprobar.php">login</a>.</p>
         <?php
     }
 }

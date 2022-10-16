@@ -1,3 +1,7 @@
+<?php
+ob_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -43,7 +47,7 @@
     <label>
         Contraseña
     </label>
-    <input type="contraseña" name="registrado[contraseña]" required autocomplete="off" placeholder="Tu contraseña..."/>
+    <input type="password" name="registrado[contraseña]" required autocomplete="off" placeholder="Tu contraseña..."/>
 
     <button type="submit" class="enviar">enviar</button>
 </form>
@@ -75,7 +79,7 @@ $apellido = $_POST['registrado']['apellido'] ?? '';
 $direccion = $_POST['registrado']['direccion'] ?? '';
 $telefono = $_POST['registrado']['telefono'] ?? '';
 $email = $_POST['registrado']['email'] ?? '';
-$contraseña = $_POST['registrado']['contraseña'] ?? '';
+$password = $_POST['registrado']['contraseña'] ?? '';
 
 /* A continuación, encriptamos la contraseña. Lo más sencillo es utilizar el método crypt() Requiere un valor de salt según los requisitos de Blowfish (que es nuestro método de encriptación). Empezaremos por $2y$, seguido de un número entre 04 y 31 y una cadena que hace de salt escrita entre símbolos de dólar ($). */
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -84,10 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $cadena = uniqid((string)$fecha, true);
     $salt = "$2y$" . $numero . "$" . $cadena . "$";
     /* Encriptamos la contraseña. */
-    $passEncriptada = crypt($contraseña, $salt);
-    ?>
-    <p>Contraseña Blowfish: <?php echo $passEncriptada; ?></p>
-    <?php
+    $passEncriptada = crypt($password, $salt);
 
     /* Ahora, vamos a introducir los datos de usuario y contraseña en la base de datos. */
     require_once("dbcontroller.php");
@@ -116,8 +117,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         @$resultado = $db_handle -> runQueryNoFetch($sql);
         header('Location: registro.php?mensaje=1');
     }
-    ?>
-    <?php
 }
 
 ?>

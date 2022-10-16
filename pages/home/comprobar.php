@@ -1,3 +1,7 @@
+<?php
+ob_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -21,11 +25,11 @@
             <input type="email" name="registrado[email]" required autocomplete="off" placeholder="Tu email..."/>
             
             <label>
-                Contraseña
+                password
             </label>
-            <input id ="contraseña" type="password" name="registrado[contraseña]" required autocomplete="off" placeholder="Tu contraseña..."/>
+            <input id ="password" type="password" name="registrado[password]" required autocomplete="off" placeholder="Tu password..."/>
             
-            <button class="mostrarContraseña" type="button" onclick="mostrarContrasena()">Mostrar Contraseña</button>
+            <button class="mostrarpassword" type="button" onclick="mostrarContrasena()">Mostrar password</button>
 
             <button type="submit" class="enviar">enviar</button>
         </form>
@@ -45,7 +49,7 @@ if (!isset($_POST)) {
     header("location: registro.php");
 }
 $email = $_POST['registrado']['email'] ?? '';
-$contraseña = $_POST['registrado']['contraseña'] ?? '';
+$password = $_POST['registrado']['password'] ?? '';
 
 /* Si llegamos aquí es porque procedemos del formulario de logueado. */
 
@@ -54,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     require_once("dbcontroller.php");
     $db_handle = new DBController();
 
-    /* 2. Consultamos a la base de datos. Vamos a intentar recuperar la contraseña del usuario. Si la consulta devolviese un conjunto vacío, significaría que ni siquiera el usuario existe y tendríamos que actuar en consecuencia. */
+    /* 2. Consultamos a la base de datos. Vamos a intentar recuperar la password del usuario. Si la consulta devolviese un conjunto vacío, significaría que ni siquiera el usuario existe y tendríamos que actuar en consecuencia. */
     $sql = "SELECT contraseña FROM clientes WHERE email='$email';";
     @$resultado = $db_handle -> runQueryNoFetch($sql);
 
@@ -68,24 +72,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die();
     }
 
-    /* Si estamos aquí es porque se ha recuperado una contraseña para el usuario. Ahora, tenemos que leerla y compararla con la contraseña especificada en el formulario para ver si está permitido el acceso del usuario. */
+    /* Si estamos aquí es porque se ha recuperado una password para el usuario. Ahora, tenemos que leerla y compararla con la password especificada en el formulario para ver si está permitido el acceso del usuario. */
 
-    /* Recordad que el resultado de la consulta está formado por un solo registro con un solo campo que es la contraseña. */
+    /* Recordad que el resultado de la consulta está formado por un solo registro con un solo campo que es la password. */
 
     $registro = mysqli_fetch_assoc($resultado);
     $passBD = $registro['contraseña'];
 
-    /* Sólo nos quedaría comprobar que ambas contraseña son iguales. Para ello, necesitamos la función contraseña_verify. */
-    if (password_verify($contraseña, $passBD)) {
+    /* Sólo nos quedaría comprobar que ambas password son iguales. Para ello, necesitamos la función password_verify. */
+    if (password_verify($password, $passBD)) {
         session_start();
         $_SESSION['email'] = $email;
         unset($_SESSION["cart_items"]);
         header('Location: home.php');
         ?>
         <?php
+        ob_start();
     } else {
         ?>
-        <p>La contraseña no es correcta. Inténtalo de nuevo.</p>
+        <p>La password no es correcta. Inténtalo de nuevo.</p>
         <?php
     }
 }
@@ -94,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <script>
   function mostrarContrasena(){
-      var tipo = document.getElementById("contraseña");
+      var tipo = document.getElementById("password");
       console.log(tipo)
       if(tipo.type == "password"){
           tipo.type = "text";

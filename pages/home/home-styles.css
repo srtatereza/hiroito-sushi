@@ -1,107 +1,1048 @@
+*  {
+    font-family:'Times New Roman', Times, serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-color:rgb(255, 194, 68);
+} 
+    
+.contenedorCentral {
+     width: 100%;
+}
+    
+.menu {
+    width: 100%;
+    display:flex;
+    height: 200px;
+    background-color:#00a082 !important;
+    padding: 0;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+    
+ul.menu-content {
+        width: 70%;
+        text-align: center;
+        display: grid;
+        font-size: 2rem;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding: 0;
+        margin-top: 70px;
+        
+}
+ul.menu-content li {
+        display:inline;
+        margin: 0px 10px 0px 10px;
+        font-weight:bold;
+    }
+    ul.menu-content li a {
+        text-decoration:none;
+        color:rgb(255, 255, 255);
+    }
+   
+    img.logo {
+        width:auto;
+        height:160px;
+        margin-top: 20px;
+    }
+    .banner {
+        margin: 0;
+        padding: 0px;
+    }
+    .carousel-inner.active {
+        width: 60%;
+        height: 320px;
+    }
+    
+    .imagenCarrusel{
+        width: 60%;
+        height: 320px;
+        margin-left: 250px;
+    
+    }
+
+h1.bienvenido {
+        width: 30%;
+        text-align: center;
+        font-size: 2rem;
+        background-color: #00a082;
+        border-radius: 1rem;
+        color:#ffffff;
+        margin: 30px 0px 20px 450px;
+    
+}
+h1.bienvenido1 {
+        width: 30%;
+        text-align: center;
+        font-size: 2rem;
+        background-color: #00a082;
+        border-radius: 1rem;
+        color:#ffffff;
+        margin: 40px 0px 20px 450px;
+}
+    
+.productoCarrito {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 30px;
+        margin-left: 10px;
+        margin-right: 10px;
+
+}
+.product-item {
+        display: grid;
+        width: 100%;
+        height: auto;
+        background: #ffffff;
+        margin: 10px 0px 10px 0px;
+        border: #E0E0E0 1px solid;
+        border-radius: 1rem;
+    }
+    
+    img {
+        width: auto;
+        height: 140px;
+    } 
+
+    .product-image {
+        width: 100%;
+        height: 100px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+
+    }
+    
+    .product-title {
+        margin-top: 45px;
+        font-weight: bolder;
+        font-size: 1.3rem;
+        text-align: center;
+    }
+    .product-ingredientes {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        font-size: 1rem;
+        margin: 0%;
+    }
+    
+    .cart-action {
+        justify-items: end;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin: 15px 5px 10px 5px;
+        font-size: 1.3rem;
+        font-weight:  bolder;
+    }
+    .preciotexto {
+        color: black;
+        margin-right: 0px;
+        margin-top: 10px;
+        }
+        
+    .precio {
+        color: black;
+        margin-right: 20px;
+        margin-top: 10px;
+    }
+    .product-cantidad {
+        width: 80%;
+        height: 50px;
+        font-size: 1.3rem;
+        border: 1px solid #00a082;
+        color: #000000;
+        text-align: center;
+        margin: 4px 0px 4px 10px;
+    }
+    
+    input.btnAddAction {
+    font-size: 1.3rem;
+    background-color: #00a082;
+    color: #ffffff;
+    border-radius: 3px;
+    }
+    
+    .horaPedir {
+        width: 60%;
+        background-color: #00a082;
+        border: #E0E0E0 1px solid;
+        border-radius: 2rem;
+        margin: 20px 0px 10px 300px;
+        color: #ffffff;
+        text-align: center;
+        font-size: 2rem;
+    }
+    
+    
+    a.vaciar {
+        width: 30%;
+        padding: 7px;
+        text-align: center;
+        font-size: 2rem;
+        background-color: #00a082;
+        color: #ffffff !important;;
+        text-decoration: none;
+        border-radius: 0.5rem;
+        margin: 0px 0px 10px 30px;
+    
+    }
+    .shopping-cart {
+        margin: 30px 0px 60px 200px;
+        width: 90%;
+        height: auto;
+    
+    }
+    .shopping-cart table {
+        width: 80%;
+        background-color: #F0F0F0;
+        margin: 10px 0px 20px 0px;
+    }
+    
+    .shopping-cart table td {
+        background-color: #FFFFFF;
+        margin: 0px;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    
+    tr , td {
+        border:#cbcaca 1px solid;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    th {
+        border: #cbcaca 1px solid;
+        font-size: 1.5rem;
+    }
+    
+    .cart-item-image {
+        width: 25%;
+        height: 80px;
+        border-radius: 50%;
+        border: #E0E0E0 1px solid;
+        vertical-align: middle;
+        margin-right: 15px;
+        margin-top: 5px;
+    }
+
+    img.eliminar {
+        width: 30%;
+        height: 50px;
+    }
+    
+    .comprar {
+        width: 80%;
+        background-color: #00a082;
+        font-size: 1.5rem;
+        text-decoration: none;
+        border: #E0E0E0 1px solid;
+        color: #ffffff;
+        margin: 5px;
+    }
+    form.principal {
+        display: flex;
+        width: 50%;
+        background-color: rgb(255, 255, 255);
+        border-radius: 1rem;
+        border: 1px solid #00a082;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: space-around;
+        margin: auto;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+    }
+    
+    label {
+        text-transform: uppercase;
+        text-align: left;
+        margin: 10px 10px 0px 10px;
+    }
+    
+    input {
+        font-size: 20px;
+        padding: 0.5rem;
+        display: block;
+        background-color: white;
+        border: 1px solid gray;
+        margin: 4px 10px 10px 10px;
+        font-size: 2.2rem;
+    }
+    .propaganda {
+        margin-top: 40px;
+    }
+    img.propaganda {
+        width: 100%;
+        height: 700px;
+    }
+
+    .footer {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        width: 100%;
+        font-size: 1.8rem;
+        height: 220px;
+        background-color:#00a082 !important;
+        color: #ffffff;
+        padding: 0;
+        text-align: center;
+        margin-top: 30px;
+    }
+    img.icono{
+        width: 7%;
+        height: 90px;
+    }
+    label {
+        font-size: 1rem;
+    }
+    input {
+        font-size: 1.2rem;
+    }
+    
+
 /* The sidebar menu */
-.sidebar {
-    height: 100%; /* 100% Full-height */
-    width: 95px;
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0;
-    left: 0;
-    background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 0.5rem; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+@media screen and  (max-width: 1200px) {
+    
+body {
+    background-color:rgb(255, 194, 68);
+    width: 100%;
+    height: 100%;
+    font-size: 1.2rem;
+    margin: 0px;
+}   
+
+.contenedorCentral {
+    width: 100%;
+}
+.menu {
+    height: 215px;
+    margin-bottom: 40px;
 }
 
-/* The sidebar links */
-.sidebar a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidebar a:hover {
-    color: #f1f1f1;
-}
-
-/* Position and style the close button (top right corner) */
-.sidebar .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-/* The button used to open the sidebar */
-.openbtn {
-    font-size: 20px;
-    cursor: pointer;
-    background-color: #111;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-}
-
-.openbtn:hover {
-    background-color: #444;
-}
-
-a.sidebar-item {
-    display: flex;
-}
-
-em.bi {
+ul.menu-content {
+    width: 90%;
+    display: grid;
     font-size: 2rem;
-    margin-right: 2rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 80px;
+}
+ul.menu-content li {
+    margin: 0px 10px 0px 0px;
+    font-weight:bold;
+}
+ul.menu-content li a {
+    text-decoration:none;
+    color:rgb(255, 255, 255);
+}
+img.logo {
+    width:auto;
+    height:200px;
+    margin-top: 10px;
+}
+.banner {
+    margin: 0;
+    padding: 0px;
+}
+.carousel-inner.active {
+    width: 100%;
+    height: 330px;
 }
 
-span.sidebar-item-text {
-    display: flex;
-    align-items: center;
-}
+.imagenCarrusel{
+    width: 70%;
+    height: 330px;
+    margin-left: 180px;
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-    transition: margin-left .5s; /* If you want a transition effect */
-    padding: 20px;
-    margin-left: 95px;
+}
+h1.bienvenido {
+    font-size: 2.4rem;
+    width: 40%;
+    margin: 30px 130px 20px 320px;
+ }
+
+ .productoCarrito {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 img {
-	border: none;
-	border-radius:5%;
-	height: 288px;
-	width: 288px;
-}
-p {
-	line-height: 30px;
-	margin: 0;
-	color: black;
-}
-span {
-    color:black;
+    width: auto;
+    height: 180px;
 }
 
-.productos {
+
+.product-image {
+    width: 100%;
+    height: 180px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.product-title {
+    width: 100%;
+    font-size: 1.5rem;
+    margin: 0%;
+    text-align: center;
+}
+
+.product-ingredientes {
+    font-size: 1.3rem;
+    text-align: center;
+    margin: 5px;
+    width: 95%;
+}
+.cart-action {
+   width: 95%;
+   margin: 10px 5px 20px 5px;
+}
+
+.preciotexto {
+    font-size: 1.3rem;
+    }
+    
+.precio {
+    font-size: 1.3rem;
+    margin-right: 20px;
+
+}
+.product-cantidad {
+    font-size: 1.3rem;
+    width: 80%;
+    height: 35px;
+    padding: 0%;
+    margin-left: 20px;
+}
+
+input.btnAddAction {
+    font-size: 1.3rem;
+    margin: 0%;
+    padding: 0%;
+}
+
+.horaPedir {
+    width: 70%;
+    font-size: 2.5rem;
+    margin-left: 170px;
+}
+
+.shopping-cart {
+    margin: 30px 0px 60px 130px;
+    width: 90%;
+    height: auto;
+
+}
+
+a.vaciar {
+    font-size: 2rem;
+}
+.shopping-cart table td {
+    font-size: 1.7rem;
+}
+tr , td {
+    font-size: 1.7rem;
+}
+th {
+	border: #cbcaca 1px solid;
+    font-size: 1.7rem;
+}
+
+.cart-item-image {
+	width: 30%;
+    height: 100px;
+    margin-top: 10px;
+    margin-right: 15px;
+}
+img.eliminar {
+	width: 35%;
+	height: 60px;
+    padding: 0px;
+}
+
+.comprar {
+	background-color: #00a082;
+    font-size: 2rem;
+    text-decoration: none;
+    border: #E0E0E0 1px solid;
+    color: #ffffff;
+    padding: 10px;
+    margin: 5px;
+}
+
+form.principal {
+    display: flex;
+    width: 30%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1rem;
+    border: 1px solid #00a082;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    margin: auto;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    }
+
+label {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    text-align: left;
+    margin: 10px 10px 0px 10px;
+}
+
+input {
+    font-size: 20px;
+    padding: 0.5rem;
     display: block;
+    background-color: white;
+    border: 1px solid gray;
+    margin: 4px 10px 10px 10px;
+    font-size: 1.5rem;
+}
+.propaganda {
+    margin-top: 40px;
+}
+img.propaganda {
+    width: 100%;
+    height: 700px;
 }
 
-div.producto {
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap:1rem;
-    grid-auto-flow: row;
+.footer {
+    font-size: 1.8rem;
+    height: 230px;
+}
+img.icono{
+    width: 10%;
+    height: 100px;
+    margin-bottom: 20px;
+}
+h1.bienvenido1 {
+    width: 20%;
+    margin: 10px 10px 30px 450px;
+    font-size: 2rem;
+}
 }
 
 
-
+@media screen and  (max-width: 1000px) {
+    .menu {
+        height: 170px;
+        margin-bottom: 40px;
+    }
+    
+    ul.menu-content {
+        width: 90%;
+        display: grid;
+        font-size: 1.7rem;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin-top: 50px;
+    }
+    ul.menu-content li {
+        margin: 0px 5px 0px 0px;
+        font-weight:bold;
+    }
+    ul.menu-content li a {
+        text-decoration:none;
+        color:rgb(255, 255, 255);
+    }
+    img.logo {
+        width:auto;
+        height:150px;
+        margin-top: 3px;
+    }
+    .imagenCarrusel{
+        margin-left: 150px;
+    
+    }
+    h1.bienvenido {
+        font-size: 2rem;
+        margin: 30px 130px 20px 250px;
+     }
+    .productoCarrito {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .horaPedir {
+        font-size: 2rem;
+    }
+    .shopping-cart table td {
+        font-size: 1.5rem;
+    }
+    tr , td {
+        font-size: 1.5rem;
+    }
+    th {
+        border: #cbcaca 1px solid;
+        font-size: 1.5rem;
+    }
+    .cart-item-image {
+        width: 30%;
+        height: 65px;
+    }
+    img.eliminar {
+        width: 25%;
+        height: 45px;
+    }
+    .comprar {
+        font-size: 1.5rem;
+    }
+    form.principal {
+        width: 40%;
+        margin-bottom: 20px;
+    }
+    label {
+        font-size: 1.7rem;
+    }
+    input {
+        font-size: 1.9rem;
+    }
+    h1.bienvenido1 {
+        width: 40%;
+        margin: 10px 10px 20px 220px;
+        font-size: 2.2rem;
+    
+    }
+}
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-    .sidebar {padding-top: 15px;}
-    .sidebar a {font-size: 18px;}
+@media screen and  (max-width: 769px) {
+body {
+        margin: 0px;
+        padding: 0;
+}  
+.html { 
+    scroll-behavior:auto; 
 }
+.banner {
+    margin: 0;
+    padding: 0px;
+}
+
+.carousel-inner.active {
+    width: 100%;
+    height: 270px;
+}
+
+.imagenCarrusel{
+    width: 85%;
+    height: 270px;
+    margin: 0px 10px 10px 60px;
+}
+
+h1 {
+    color: #000000;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.menu {
+    width: 100%;
+    height: 210px; 
+    margin-top: 0%;
+    padding-top: 0%;
+}
+
+#text {
+    font-size: 0.5rem;
+}
+ul.menu-content {
+    padding: 0;
+    margin: 20px 0px 20px 0px;
+    display: flex;
+   flex-direction: column;
+}
+ul.menu-content li {
+    font-weight:bold;
+    font-size: 1.7rem;
+    text-align: center;
+    margin-right: 130px;
+}
+ul.menu-content li a {
+    text-decoration:none;
+    color:rgb(255, 255, 255);
+}
+img.logo {
+    width:auto;
+    height:180px;
+    flex:0 0 50px;
+}
+
+h1.bienvenido {
+    width: 40%;
+    text-align: center;
+    font-size: 2rem;
+    background-color: #00a082;
+    border-radius: 1rem;
+    color:#ffffff;
+    margin: 30px 100px 20px 230px;
+
+}
+h1.bienvenido1 {
+    width: 30%;
+    margin: 10px 10px 20px 270px;
+    font-size: 2rem;
+
+}
+.productoCarrito {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.product-item {
+margin: 10px 20px 0px 50px;
+width: 80%;
+}
+
+img {
+    width: auto;
+    height: 180px;
+}
+
+.product-image {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.product-title {
+    font-size: 1.9rem;
+    margin-top: 0%;
+}
+.product-ingredientes {
+    margin: 10px 40px 20px 40px;
+    width: auto;
+    height: auto;
+    text-align: center;
+    font-size: 1.7rem;
+
+}
+.cart-action  {
+    width: 95%;
+ }
+.product-cantidad {
+        width: 80%;
+        height: 50px;
+        font-size:  1.5rem;
+        margin: 4px 5px 4px 10px;
+}
+
+input.btnAddAction {
+    width: 100%;
+    font-size: 1.5rem;
+    margin: 4px 2px 4px 20px;
+    padding: 0%;
+}    
+.preciotexto {
+margin-top: 15px;
+font-size: 1.5rem;
+}
+
+.precio {
+margin-right: 60px;
+margin-top: 15px;
+font-size: 1.5rem;
+}
+
+a.vaciar {
+    font-size: 1.2rem;
+}
+.horaPedir {
+    font-size: 1.9rem;
+    margin-left: 80px;
+}
+.shopping-cart {
+    margin: 30px 0px 60px 80px;
+    width: 90%;
+    height: auto;
+
+}
+
+.shopping-cart table {
+    background-color: #F0F0F0;
+	margin: 10px 0px 20px 0px;
+}
+
+.shopping-cart table td {
+	background-color: #FFFFFF;
+    padding: 0px 5px 3px 5px;
+    margin: 0px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+th {
+    font-size: 1.5rem;
+ }
+
+img.eliminar {
+	width: 35%;
+	height: 50px;
+    padding: 0px;
+}
+.cart-item-image { 
+    width: 65%;
+    height: 80px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.comprar {
+    padding: 2px;
+    margin: 2px;
+    font-size: 1.5rem;
+}
+
+form.principal {
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    text-align: left;
+    margin: 10px 10px 0px 10px;
+}
+
+input {
+    font-size: 1.5rem;
+    display: block;
+    background-color: white;
+    border: 1px solid gray;
+    margin: 4px 10px 10px 10px;
+}
+
+
+.propaganda {
+    margin-top: 20px;
+}
+ 
+}
+
+
+@media screen and (max-width: 480px) {
+    .banner {
+        margin: 0;
+        padding: 0px;
+    }
+
+    .menu {
+        width: 100%;
+        height: 220px; 
+        margin-top: 0%;
+    }
+    ul.menu-content {
+        width: 50%;
+        display: inline-block;
+        font-size: 0.5rem;
+        margin-top: 30px;
+    }
+    ul.menu-content li a {
+        display:inline-block;
+        margin: 5px 10px 0px 5px;
+        font-weight:bold;
+    }
+
+    img.logo {
+        width:auto;
+        height:125px;
+        margin-top: 50px;
+    }
+    .carousel-inner.active {
+        width: 100%;
+        height: 260px;
+    }
+
+.imagenCarrusel{
+        width: 90%;
+        height: 260px;
+        margin: 0px 15px 10px 20px;
+}
+
+ h1.bienvenido {
+    margin: 10px 40px 20px 40px;
+    font-size: 1.8rem;
+
+}
+h1.bienvenido1 {
+    width: 40%;
+    margin: 10px 40px 20px 110px;
+    font-size: 1.5rem;
+
+}
+.productoCarrito {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.product-item {
+        width: 90%;
+        margin: 10px 30px 0px 20px;
+}
+
+.product-image {
+        margin-top: 10px;
+        margin-bottom: 30px;
+        height: 120px;
+        width: auto;
+        text-align: center;
+}
+
+img {
+        width: auto;
+        height: 145px;
+}
+.product-ingredientes {
+    margin: 10px 40px 20px 40px;
+    width: auto;
+    height: auto;
+}
+
+.preciotexto {
+    font-size: 1.5rem;
+}
+
+.precio {
+        margin-right: 10px;
+        font-size: 1.5rem;
+    }
+
+input.btnAddAction {
+    width: 100%;
+        font-size: 1rem;
+        margin: 4px 2px 4px 20px;
+        padding: 0%;
+}
+    
+.product-cantidad {
+        width: 90%;
+        height: 50px;
+        font-size: 1.3rem;
+        margin: 4px 4px 4px 8px;
+} 
+
+form.principal {
+    width: 70%;
+    margin-bottom: 20px;
+}
+label {
+    font-size: 1rem;
+}
+input {
+    font-size: 1.3rem;
+}
+
+button {
+    width: auto;
+    background-color: #00a082;
+    border: #E0E0E0 1px solid;
+    color: #ffffff;
+    padding: 10px;
+    margin: 0px 0px 10px 10px;
+    font-size: 1.5rem;
+}
+
+button.mostarContraseña {
+    width: auto;
+    background-color: #00a082;
+    border: #E0E0E0 1px solid;
+    color: #ffffff;
+    padding: 10px;
+    margin: 0px 0px 10px 10px;
+    font-size: 1rem;
+}
+div.register {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.horaPedir {
+    background-color: #00a082;
+    border: #E0E0E0 1px solid;
+    border-radius: 1rem;
+    margin: 20px 0px 10px 20px;
+    color: #ffffff;
+    text-align: center;
+    width: 80%;
+    font-size: 1.2rem;
+}
+
+a.vaciar { 
+    padding: 7px;
+    font-size: 1.2rem;
+    margin: 10px 20px 0px 20px;
+}
+
+.shopping-cart {
+    margin: 30px 0px 60px 0px;
+    width: 90%;
+    height: auto;
+}
+.shopping-cart table {
+    background-color: #F0F0F0;
+	margin: 10px 20px 20px 10px;
+}
+
+.shopping-cart table td {
+	background-color: #FFFFFF;
+    margin: 0px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+th {
+    font-size: 1rem;
+    margin: 0;
+    padding: 5px;
+}
+#text {
+    font-weight: bolder;
+    color: #000000;
+}
+
+.cart-item-image { 
+    width: 70%;
+    height: 35px;
+    margin-top: 5px;
+}
+
+img.eliminar {
+	width: 50%;
+	height: 35px;
+    padding: 0px;
+}
+.comprar {
+    width: 100%;
+   font-size: 1rem;
+   margin: 0%;
+}
+img.propaganda  {
+    height: 450px;
+}
+
+.footer {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    font-size: 1.3rem;
+    height: 180px;
+    background-color:#00a082 !important;
+    color: #ffffff;
+    padding: 0;
+    text-align: center;
+    margin-top: 50px;
+    }
+img.icono{
+    width: auto;
+    height: 50px;
+}
+
+}
+

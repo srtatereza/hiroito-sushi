@@ -6,44 +6,35 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="lib/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="home.css" rel="stylesheet">
 
 </head>
 
 <body>
     
-<h1>Bienvenido</h1>
-
-<div class="container">
-    <!-- Creamos un formulario para realizar el login en el sitio web. -->
-    <div class="login">
-        <form action="comprobar.php" method="POST">
+<h1 class="bienvenido">Bienvenido</h1>
+ <!-- Creamos un formulario para realizar el login en el sitio web. -->
+        <form action="comprobar.php" method="POST" class="principal">
             <label>
                 E-mail
             </label>
             <input type="email" name="registrado[email]" required autocomplete="off" placeholder="Tu email..."/>
+            
             <label>
                 Contraseña
             </label>
-            <input type="contraseña" name="registrado[contraseña]" required autocomplete="off" placeholder="Tu contraseña..."/>
+            <input id ="contraseña" type="password" name="registrado[contraseña]" required autocomplete="off" placeholder="Tu contraseña..."/>
+            
+            <button class="mostrarContraseña" type="button" onclick="mostrarContrasena()">Mostrar Contraseña</button>
 
-            <button type="submit" class="boton-blanco">enviar</button>
+            <button type="submit" class="enviar">enviar</button>
         </form>
-    </div>
-
-    <?php if (isset($_GET['mensaje'])) { ?>
-<p>Acceso permitido. <a href="home.php">entrar</a>.</p>
-<p>
-    <?php } ?>
-
 
 
     <div class="register">
-        <span>
-            <span>¿Todavía no eres usuario?</span>
-            <a href="registro.php">Regístrate</a>
-        </span>
+             <p>¿Todavía no eres usuario?
+                 <a href="registro.php">Regístrate</a>
+            </p>
     </div>
 </div>
 
@@ -60,38 +51,19 @@ $contraseña = $_POST['registrado']['contraseña'] ?? '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     /* 1. Conexión a la base de datos. */
-    try {
-        include "conexion.php";
-        @$conexion = mysqli_connect($host, $usuario, $pass, $nombreBD);
-    } catch (Exception $e) {
-        ?>
-        <p>Error: no se pudo conectar con la base de datos.</p>
-        <?php
-        die();
-    }
+    require_once("dbcontroller.php");
+    $db_handle = new DBController();
 
     /* 2. Consultamos a la base de datos. Vamos a intentar recuperar la contraseña del usuario. Si la consulta devolviese un conjunto vacío, significaría que ni siquiera el usuario existe y tendríamos que actuar en consecuencia. */
     $sql = "SELECT contraseña FROM clientes WHERE email='$email';";
-
-
-    /* Ejecuto la consulta. */
-    try {
-        include "conexion.php";
-        @$resultado = mysqli_query(@$conexion, $sql);
-    } catch (Exception $e) {
-        ?>
-        <p>Error: no se pudo ejecutar la consulta.</p>
-        <?php
-        die();
-    }
+    @$resultado = $db_handle -> runQueryNoFetch($sql);
 
     /* Comprobamos el número de resultados de la consulta. */
     $numeroResultados = mysqli_num_rows($resultado);
     if ($numeroResultados == 0) {
         /* El usuario no existe en la base de datos. */
         ?>
-        <p>Error: el usuario no existe en la base de datos.</p>
-        <p>Volver al <a href="comprobar.php">login</a>.</p>
+        <p>El usuario no existe.</p>
         <?php
         die();
     }
@@ -105,18 +77,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     /* Sólo nos quedaría comprobar que ambas contraseña son iguales. Para ello, necesitamos la función contraseña_verify. */
     if (password_verify($contraseña, $passBD)) {
-        header('Location: comprobar.php?mensaje=1');
+        session_start();
+        $_SESSION['email'] = $email;
+        unset($_SESSION["cart_items"]);
+        header('Location: home.php');
         ?>
         <?php
     } else {
         ?>
         <p>La contraseña no es correcta. Inténtalo de nuevo.</p>
-        <p>Volver al <a href="comprobar.php">login</a>.</p>
         <?php
     }
 }
 
 ?>
+
+<script>
+  function mostrarContrasena(){
+      var tipo = document.getElementById("contraseña");
+      console.log(tipo)
+      if(tipo.type == "password"){
+          tipo.type = "text";
+      }else{
+          tipo.type = "password";
+      }
+  }
+</script>
 
 </body>
 

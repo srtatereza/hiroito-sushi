@@ -62,6 +62,7 @@
 		<div class="productoCarrito">
 
 			<?php
+			// igual que en el home
 			session_start();
 			require_once("dbcontroller.php");
 			$db_handle = new DBController();
@@ -125,7 +126,7 @@
 							<div class="preciotexto">Precio:</div>
 							<div class="precio"><?php echo "".$product_array[$key]["precio"]."€"; ?></div>
 						
-							<input type="text" class="product-cantidad" name="cantidad" value="" size="2" />
+							<input type="text" class="product-cantidad" name="cantidad" value="1" size="2" />
 							<input type="submit" value="Agregar al carrito" class="btnAddAction" />
 						</div>
 					</form>

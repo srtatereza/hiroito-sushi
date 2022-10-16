@@ -27,12 +27,15 @@
 
 
 	<?php
+	// sacamos el email de la sesion
 	session_start();
 	$email = $_SESSION['email'];
 
+	// creamos la conexion
 	require_once("dbcontroller.php");
     $db_handle = new DBController();
 
+	// sacamos los datos del cliente conociendo su email
 	$sql = "SELECT clientes.id_cliente , clientes.nombre , clientes.apellido , clientes.direccion , clientes.telefono , clientes.email , clientes.contraseña FROM clientes WHERE email='$email';";
 	$resultado = $db_handle->runQueryNoFetch($sql);
 
@@ -45,7 +48,6 @@
 		$cliente['email'] = $registro['email'];
 		$cliente['telefono'] = $registro['telefono'];
 		$cliente['contraseña'] = $registro['contraseña'];
-
 	}
 	?>
 
@@ -62,7 +64,6 @@
 					</label>
 						<input type="text" name="apellido" 
 						value="<?php echo $cliente['apellido']; ?>"; />
-					
 
 					<label>Direccion
 					</label>
@@ -74,20 +75,17 @@
 					</label>
 						<input type="number" name="telefono" 
 						value="<?php echo $cliente['telefono']; ?>"; />
-					
 
 					<label>Email
 					</label>
 						<input type="text" name="email" 
 						value="<?php echo $cliente['email']; ?>"; />
-					
 
 					<label>Contraseña
 					</label>
 						<input type="password" name="contraseña" 
 						value="<?php echo $cliente['contraseña']; ?>"; />
 				</form>
-
 
 		<div class="footer"> 
 			<div>
@@ -103,8 +101,6 @@
 				<a href="https://www.instagram.com/hiroito_sushi/" target="_blank"><img src="imagenes/instagram.png" alt="logo" class="icono"></a>
 			</div>
 		</div>		
-
 	</div>
-	
 </body>
 </html>

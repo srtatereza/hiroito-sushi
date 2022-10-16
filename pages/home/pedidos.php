@@ -23,12 +23,16 @@
 		</div>
       
 <?php
+// sacamos el email de la sesion
 session_start();
 $email = $_SESSION['email'];
 
+// creamos conexion
 require_once("dbcontroller.php");
 $db_handle = new DBController();
 
+// sacamos los pedidos del cliente, y dado que no conocemos su id de primeras, hacemos una consulta a la tabla de clientes y 
+// unimos resultados
 $sql = "SELECT pedidos.id_pedido , pedidos.fecha , pedidos.id_producto, productos.nombre FROM pedidos INNER JOIN productos 
         WHERE pedidos.id_cliente IN (select clientes.id_cliente from clientes where clientes.email='$email') 
         AND pedidos.id_producto = productos.id_producto;";

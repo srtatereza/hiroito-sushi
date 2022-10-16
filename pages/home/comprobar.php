@@ -29,7 +29,7 @@ ob_start();
             </label>
             <input id ="password" type="password" name="registrado[password]" required autocomplete="off" placeholder="Tu password..."/>
             
-            <button class="mostrarpassword" type="button" onclick="mostrarContrasena()">Mostrar password</button>
+            <button class="mostrarContraseña" type="button" onclick="mostrarContrasena()">Mostrar password</button>
 
             <button type="submit" class="enviar">enviar</button>
         </form>
